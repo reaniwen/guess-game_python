@@ -1,17 +1,27 @@
 #!/usr/bin/python
-# Filename: if.py 
+# Filename: guess-game.py 
 
-number = 23
-guess = int(raw_input('Enter an integer : '))
+import random
 
-if guess == number:
-    print 'Congratulations, you guessed it.' # New block starts here
-    print "(but you do not win any prizes!)" # New block ends here
-elif guess < number:
-    print 'No, it is a little higher than that' # Another block
-    # You can do whatever you want in a block ...
-else:
-    print 'No, it is a little lower than that' 
-    # you must have guess > number to reach here
+def guess(guessnum):
+		if guessnum == number:
+			print "step end"
+			print 'Congratulations, you guessed it.' 
+			print "(but you do not win any prizes!)" 
+			print 'done'
+		elif guessnum < number:
+			#higher'
+			print 'No, it is a little higher than that' 
+			guessnum = int(raw_input('Enter an integer between 1 to 6: '))
+			guess(guessnum)
+		else:
+			#lower'
+			print 'No, it is a little lower than that' 
+			guessnum = int(raw_input('Enter an integer between 1 to 6: '))
+			guess(guessnum)
 
-print 'Done'
+
+number = random.randint(1,6)
+print number
+guessnum = int(raw_input('Enter an integer between 1 to 6: '))
+guess(guessnum)
