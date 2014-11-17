@@ -5,7 +5,7 @@ import random
 
 def guess(guessnum):
 		if guessnum == number:
-			print "step end"
+			#successful
 			print 'Congratulations, you guessed it.' 
 			print "(but you do not win any prizes!)" 
 			print 'done'
